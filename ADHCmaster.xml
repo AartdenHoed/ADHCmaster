@@ -24,7 +24,7 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHC site\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHC-site\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
@@ -248,7 +248,7 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Visual Basic\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="VisualBasic\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
@@ -276,7 +276,7 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Windows Scheduler\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WindowsScheduler\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
