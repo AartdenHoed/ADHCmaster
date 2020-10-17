@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="2.0">
+<ADHCmaster Version="2.2">
 	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="None" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
 				<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -19,7 +19,6 @@
 			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
-					<Exclude>*None*</Exclude>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
