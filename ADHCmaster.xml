@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="1.8">
+<ADHCmaster Version="2.0">
 	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="None" Delay="365">
@@ -155,6 +155,20 @@
 				<Modules Process="None">
 					<Include>#Config.adhc</Include>
 				</Modules>
+			</Target>
+			<!-- Copy Initvar.ps1 ook naar PRTG sensors STAGING --> 
+			<Target Root="$ADHC_StagingDir" SubRoot="PRTGsensors\" Process="Copy" Delay="0">
+			  	<Modules Process="*">
+					<Include>InitVar.ps1</Include>
+					<Exclude>*ALL*</Exclude>
+				</Modules>				
+			</Target>
+			<!-- Copy Initvar.ps1 ook naar PRTG sensors DEVELOPMENT --> 
+			<Target Root="$ADHC_DevelopDir" SubRoot="PRTGsensors\" Process="Copy" Delay="0">
+			  	<Modules Process="*">
+					<Include>InitVar.ps1</Include>
+					<Exclude>*ALL*</Exclude>
+				</Modules>				
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
 				<Modules>
