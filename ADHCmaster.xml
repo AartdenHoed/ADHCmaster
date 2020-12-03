@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="3.1">
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster\">
+<ADHCmaster Version="4.0">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="ADHCmaster\" Process="SourceCopy" Delay="365">
 				<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -11,21 +11,21 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="None" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="ADHCmaster\" Process="None" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="ADHCmaster\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHC-site\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHC-site.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="ADHC-site\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -34,7 +34,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>		  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="ADHC-site\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -43,7 +43,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">
+			<DSL Root="$ADHC_DSLDir" SubRoot="ADHC-site\" Process="Copy" Delay="3">
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -51,9 +51,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Batfiles\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Batfiles.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="Batfiles\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -62,7 +62,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>		  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="Batfiles\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -71,7 +71,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="Batfiles\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -79,9 +79,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Contactsync\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Contactsync.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="Contactsync\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -90,7 +90,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>	  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="Contactsync\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -99,7 +99,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="Contactsync\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -107,9 +107,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Java\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Java.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="Java\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -118,7 +118,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>	  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="Java\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -127,7 +127,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="Java\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -135,9 +135,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Powershell\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="Powershell.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="Powershell\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -146,7 +146,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>	  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="Powershell\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -163,13 +163,13 @@
 				</Modules>				
 			</Target>
 			<!-- Copy Initvar.ps1 + IpNodeInfo.ps1 ook naar PRTG sensors DEVELOPMENT --> 
-			<Target Root="$ADHC_DevelopDir" SubRoot="PRTGsensors\" Process="Copy" Delay="0">
+			<Target Root="$ADHC_DevelopDir" SubRoot="PRTGsensors.git\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>InitVar.ps1,IpNodeInfo.ps1</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>				
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="Powershell\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -177,9 +177,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="PRTGlookups\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="PRTGlookups.git\">
 		<ADHCinfo Version="*" Nodes="ADHC">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="PRTGlookups\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -197,7 +197,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="PRTGlookups\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -205,9 +205,9 @@
 			</DSL>
 		</ADHCinfo>		
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="PRTGsensors\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="PRTGsensors.git\">
 		<ADHCinfo Version="*" Nodes="ADHC">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="PRTGsensors\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -225,7 +225,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="PRTGsensors\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -233,9 +233,9 @@
 			</DSL>
 		</ADHCinfo>		
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="SympaWeb\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="SympaWeb.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="C#" Delay="365">			  
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="SympaWeb\" Process="C#" Delay="365">			  
 				<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -244,7 +244,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="SympaWeb\" Process="Copy" Delay="0">
 				<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -253,7 +253,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">
+			<DSL Root="$ADHC_DSLDir" SubRoot="SympaWeb\" Process="Copy" Delay="3">
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -261,9 +261,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="VisualBasic\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="VisualBasic.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="VisualBasic\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -272,7 +272,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>		  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="VisualBasic\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -281,7 +281,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="VisualBasic\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -289,9 +289,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WindowsScheduler\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WindowsScheduler.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="WindowsScheduler\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -300,7 +300,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>	  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="WindowsScheduler" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="WindowsScheduler\" Process="WindowsScheduler" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -309,7 +309,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="WindowsScheduler\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -317,9 +317,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WindowsPowerShell\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WindowsPowerShell.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="WindowsPowerShell\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -328,7 +328,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>		  
 			</Stagelib>
-			<Target Root="$ADHC_PSUdir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_PSUdir" SubRoot="WindowsPowerShell\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -337,7 +337,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="WindowsPowerShell\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
@@ -345,9 +345,9 @@
 			</DSL>
 		</ADHCinfo>
 	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WmicPgm\">
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WmicPgm.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="*" Process="SourceCopy" Delay="365">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="WmicPgm\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -356,7 +356,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>		  
 			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="*" Process="Copy" Delay="0">
+			<Target Root="$ADHC_ProdDir" SubRoot="WmicPgm\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
 					<Exclude>#Config.adhc</Exclude>
@@ -365,7 +365,7 @@
 					<Include>#Config.adhc</Include>
 				</Modules>
 			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="*" Process="Copy" Delay="3">			  
+			<DSL Root="$ADHC_DSLDir" SubRoot="WmicPgm\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
