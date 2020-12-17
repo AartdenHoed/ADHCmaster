@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="4.0">
+<ADHCmaster Version="5.0">
 	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="ADHCmaster\" Process="SourceCopy" Delay="365">
@@ -173,6 +173,32 @@
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
+				</Modules>
+			</DSL>
+		</ADHCinfo>
+		<ADHCinfo Version="*" Nodes="ADHC">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="Powershell_ADHC\" Process="SourceCopy" Delay="365">
+			  	<Modules Process="*">
+					<Include>PRTGoverviewDB.ps1</Include>
+					<Exclude>*ALL*</Exclude>
+				</Modules>
+				<Modules Process="Master">
+					<Include>#Config.adhc</Include>
+				</Modules>	  
+			</Stagelib>
+			<Target Root="$ADHC_ProdDir" SubRoot="Powershell\" Process="Copy" Delay="0">
+			  	<Modules Process="*">
+					<Include>PRTGoverviewDB.ps1</Include>
+					<Exclude>*ALL*</Exclude>
+				</Modules>
+				<Modules Process="None">
+					<Include>#Config.adhc</Include>
+				</Modules>
+			</Target>
+			<DSL Root="$ADHC_DSLDir" SubRoot="Powershell\" Process="Copy" Delay="3">			  
+				<Modules>
+					<Include>PRTGoverviewDB.ps1</Include>
+					<Exclude>*ALL*</Exclude>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
