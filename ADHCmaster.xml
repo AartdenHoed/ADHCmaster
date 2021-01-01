@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="5.4.4">
+<ADHCmaster Version="5.5.1">
 	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="ADHCmaster\" Process="SourceCopy" Delay="365">
@@ -152,7 +152,7 @@
 			<Target Root="$ADHC_ProdDir" SubRoot="Powershell\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,PRTGoverviewDB.ps1</Exclude>
+					<Exclude>#Config.adhc,PRTGoverviewDB.ps1,Microsoft.PowerShell_profile.ps1,Microsoft.PowerShellISE_profile.ps1</Exclude>
 				</Modules>
 				<Modules Process="None">
 					<Include>#Config.adhc</Include>
@@ -174,6 +174,13 @@
 					<Include>InitVar.ps1,IpNodeInfo.ps1</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>				
+			</Target>
+			<!-- Copy Profile scripts --> 
+			<Target Root="$ADHC_PSUdir" SubRoot="WindowsPowerShell\" Process="Copy" Delay="0">
+			  	<Modules Process="*">
+					<Include>Microsoft.PowerShell_profile.ps1,Microsoft.PowerShellISE_profile.ps1</Include>
+					<Exclude>*ALL*</Exclude>
+				</Modules>
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="Powershell\" Process="Copy" Delay="3">			  
 				<Modules>
@@ -418,34 +425,6 @@
 				<Modules>
 					<Include>PRTGoverviewDB.xml</Include>
 					<Exclude>*ALL*</Exclude>
-				</Modules>
-			</DSL>
-		</ADHCinfo>
-	</SoftwareFactory>
-	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="WindowsPowerShell.git\">
-		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="WindowsPowerShell\" Process="SourceCopy" Delay="365">
-			  	<Modules Process="*">
-					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc</Exclude>
-				</Modules>
-				<Modules Process="Master">
-					<Include>#Config.adhc</Include>
-				</Modules>		  
-			</Stagelib>
-			<Target Root="$ADHC_PSUdir" SubRoot="WindowsPowerShell\" Process="Copy" Delay="0">
-			  	<Modules Process="*">
-					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc</Exclude>
-				</Modules>
-				<Modules Process="None">
-					<Include>#Config.adhc</Include>
-				</Modules>
-			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="WindowsPowerShell\" Process="Copy" Delay="3">			  
-				<Modules>
-					<Include>*ALL*</Include>
-					<Exclude>*None*</Exclude>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
