@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="8.1.2">
+<ADHCmaster Version="8.2">
 	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="ADHCmaster\" Process="SourceCopy" Delay="365">
@@ -196,25 +196,25 @@
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="Powershell\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Exclude>
+					<Exclude>#Config.adhc,DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Exclude>
 				</Modules>
 				<Modules Process="Master">
 					<Include>#Config.adhc</Include>
 				</Modules>
 				<Modules Process="None">
-					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Include>
+					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Include>
 				</Modules>				
 			</Stagelib>
 			<Target Root="$ADHC_ProdDir" SubRoot="Powershell\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1,Microsoft.PowerShell_profile.ps1,Microsoft.PowerShellISE_profile.ps1</Exclude>
+					<Exclude>#Config.adhc,DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1,Microsoft.PowerShell_profile.ps1,Microsoft.PowerShellISE_profile.ps1</Exclude>
 				</Modules>
 				<Modules Process="None">
 					<Include>#Config.adhc</Include>
 				</Modules>
 				<Modules Process="Ignore">
-					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Include>
+					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Include>
 				</Modules>
 			</Target>
 			<!-- Copy initvar.ps1,copymove.ps1 ook naar PRTG sensors STAGING --> 
@@ -241,17 +241,17 @@
 			<DSL Root="$ADHC_DSLDir" SubRoot="Powershell\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
-					<Exclude>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Exclude>
+					<Exclude>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Exclude>
 				</Modules>
 				<Modules Process="Ignore">
-					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Include>
+					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Include>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
 		<ADHCinfo Version="*" Nodes="ADHC-2">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="Powershell_ADHC\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
-					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Include>
+					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>
 				<Modules Process="Master">
@@ -260,7 +260,7 @@
 			</Stagelib>
 			<Target Root="$ADHC_ProdDir" SubRoot="Powershell\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
-					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Include>
+					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>
 				<Modules Process="None">
@@ -269,7 +269,7 @@
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="Powershell\" Process="Copy" Delay="3">			  
 				<Modules>
-					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,ipscan.ps1</Include>
+					<Include>DatabaseBackup.ps1,GitCheck.ps1,GitPushAll.ps1,PRTGoverviewDB.ps1,PrtgDbCheck.ps1,IpScan.ps1,MovieIsoCheck.ps1</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>
 			</DSL>
@@ -364,51 +364,16 @@
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="VisualBasic\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,IpScan,vbs</Exclude>
+					<Exclude>#Config.adhc</Exclude>
 				</Modules>
 				<Modules Process="Master">
 					<Include>#Config.adhc</Include>
 				</Modules>	
-				<Modules Process="None">
-					<Include>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Include>
-				</Modules>
 			</Stagelib>
 			<Target Root="$ADHC_ProdDir" SubRoot="VisualBasic\" Process="Copy" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Exclude>
-				</Modules>
-				<Modules Process="None">
-					<Include>#Config.adhc</Include>
-				</Modules>
-				<Modules Process="Ignore">
-					<Include>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Include>
-				</Modules>
-			</Target>
-			<DSL Root="$ADHC_DSLDir" SubRoot="VisualBasic\" Process="Copy" Delay="3">			  
-				<Modules>
-					<Include>*ALL*</Include>
-					<Exclude>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Exclude>
-				</Modules>
-				<Modules Process="Ignore">
-					<Include>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Include>
-				</Modules>
-			</DSL>
-		</ADHCinfo>
-		<ADHCinfo Version="*" Nodes="ADHC-2">
-			<Stagelib Root="$ADHC_StagingDir" SubRoot="VisualBasic_ADHC\" Process="SourceCopy" Delay="365">
-			  	<Modules Process="*">
-					<Include>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Include>
-					<Exclude>*ALL*</Exclude>
-				</Modules>
-				<Modules Process="Master">
-					<Include>#Config.adhc</Include>
-				</Modules>	  
-			</Stagelib>
-			<Target Root="$ADHC_ProdDir" SubRoot="VisualBasic\" Process="Copy" Delay="0">
-			  	<Modules Process="*">
-					<Include>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Include>
-					<Exclude>*ALL*</Exclude>
+					<Exclude>#Config.adhc</Exclude>
 				</Modules>
 				<Modules Process="None">
 					<Include>#Config.adhc</Include>
@@ -416,8 +381,8 @@
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="VisualBasic\" Process="Copy" Delay="3">			  
 				<Modules>
-					<Include>DatabaseBackup.vbs,GitCheck.vbs,GitPushAll.vbs,PRTGoverviewDB.vbs,PrtgDbCheck.vbs,LocalCpuTemperature.vbs,ipscan.vbs</Include>
-					<Exclude>*ALL*</Exclude>
+					<Include>*ALL*</Include>
+					<Exclude>*None*</Exclude>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
@@ -427,41 +392,41 @@
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="WindowsScheduler\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Exclude>
+					<Exclude>#Config.adhc,DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Exclude>
 				</Modules>
 				<Modules Process="Master">
 					<Include>#Config.adhc</Include>
 				</Modules>
 				<Modules Process="None">
-					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Include>
+					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Include>
 				</Modules>
 			</Stagelib>
 			<Target Root="$ADHC_ProdDir" SubRoot="WindowsScheduler\" Process="WindowsScheduler" Delay="0">
 			  	<Modules Process="*">
 					<Include>*ALL*</Include>
-					<Exclude>#Config.adhc,DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Exclude>
+					<Exclude>#Config.adhc,DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Exclude>
 				</Modules>
 				<Modules Process="None">
 					<Include>#Config.adhc</Include>
 				</Modules>
 				<Modules Process="Ignore">
-					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Include>
+					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Include>
 				</Modules>
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="WindowsScheduler\" Process="Copy" Delay="3">			  
 				<Modules>
 					<Include>*ALL*</Include>
-					<Exclude>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Exclude>
+					<Exclude>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Exclude>
 				</Modules>
 				<Modules Process="Ignore">
-					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Include>
+					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Include>
 				</Modules>
 			</DSL>
 		</ADHCinfo>
 		<ADHCinfo Version="*" Nodes="ADHC-2">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="WindowsScheduler_ADHC\" Process="SourceCopy" Delay="365">
 			  	<Modules Process="*">
-					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Include>
+					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>
 				<Modules Process="Master">
@@ -470,7 +435,7 @@
 			</Stagelib>
 			<Target Root="$ADHC_ProdDir" SubRoot="WindowsScheduler\" Process="WindowsScheduler" Delay="0">
 			  	<Modules Process="*">
-					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Include>
+					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>
 				<Modules Process="None">
@@ -479,7 +444,7 @@
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="WindowsScheduler\" Process="Copy" Delay="3">			  
 				<Modules>
-					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,ipscan.xml</Include>
+					<Include>DatabaseBackup.xml,GitCheck.xml,GitPushAll.xml,PRTGoverviewDB.xml,PrtgDbCheck.xml,LocalCpuTemperature.xml,IpScan.xml,MovieIsoCheck.xml</Include>
 					<Exclude>*ALL*</Exclude>
 				</Modules>
 			</DSL>
