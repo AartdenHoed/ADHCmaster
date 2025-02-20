@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ADHCmaster Version="8.5.1">
+<ADHCmaster Version="8.6">
 	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="ADHCmaster.git\">
 		<ADHCinfo Version="*" Nodes="$ADHC_Hoststring">
 			<Stagelib Root="$ADHC_StagingDir" SubRoot="ADHCmaster\" Process="SourceCopy" Delay="365">
@@ -352,6 +352,34 @@
 				</Modules>
 			</Target>
 			<DSL Root="$ADHC_DSLDir" SubRoot="SympaWeb\" Process="Copy" Delay="3">
+				<Modules>
+					<Include>*ALL*</Include>
+					<Exclude>*None*</Exclude>
+				</Modules>
+			</DSL>
+		</ADHCinfo>
+	</SoftwareFactory>
+	<SoftwareFactory Root="$ADHC_DevelopDir" SubRoot="SlimmeMeterPortaal.git\Publish\">
+		<ADHCinfo Version="*" Nodes="ADHC-2">
+			<Stagelib Root="$ADHC_StagingDir" SubRoot="SlimmeMeterPortaal\" Process="SourceCopy" Delay="365">			  
+				<Modules Process="*">
+					<Include>*ALL*</Include>
+					<Exclude>#Config.adhc</Exclude>
+				</Modules>
+				<Modules Process="Master">
+					<Include>#Config.adhc</Include>
+				</Modules>
+			</Stagelib>
+			<Target Root="$ADHC_ProdDir" SubRoot="SlimmeMeterPortaal\" Process="Copy" Delay="0">
+				<Modules Process="*">
+					<Include>*ALL*</Include>
+					<Exclude>#Config.adhc</Exclude>
+				</Modules>
+				<Modules Process="None">
+					<Include>#Config.adhc</Include>
+				</Modules>
+			</Target>
+			<DSL Root="$ADHC_DSLDir" SubRoot="SlimmeMeterPortaal\" Process="Copy" Delay="3">
 				<Modules>
 					<Include>*ALL*</Include>
 					<Exclude>*None*</Exclude>
